@@ -1,14 +1,35 @@
-
 # Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+# Terraform Module Generator
+`generator-terra-module` creates a base template to start a new terraform module.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## Prerequisites
+1. Install latest [Node LTS](https://nodejs.org).
+2. `npm install -g yo`
+3. `npm install -g generator-terra-module`
+
+## Usage
+```
+$yo terra-module
+```
+*Note that this template will generate files in the current directory, so be sure always to run it against a new directory*
+
+### Setting Environment
+```
+
+```
+
+### Building module
+Once the project is scaffolded, at the root folder run:
+```
+$rake build
+```
+### Running module
+At the root folder run:
+```
+$terraform init
+$terraform plan
+$terraform apply
+```
