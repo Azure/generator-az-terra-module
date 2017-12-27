@@ -5,6 +5,8 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 # Terraform Module Generator
 `generator-terra-module` creates a base template to start a new terraform module.
 
+![Alt Text](/doc/scaffolding.640x434.gif)
+
 ## Prerequisites
 1. Install latest [Node LTS](https://nodejs.org).
 2. `npm install -g yo`
@@ -24,6 +26,7 @@ $yo terra-module
 ### Building module
 Once the project is scaffolded, at the root folder run:
 ```
+$bundle install
 $rake build
 ```
 ### Running module
