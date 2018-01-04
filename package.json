@@ -1,10 +1,10 @@
 {
-  "name": "generator-terra-module",
+  "name": "generator-az-terra-module",
   "version": "0.1.0",
-  "description": "Create a terraform module project.",
+  "description": "Create an Azure terraform module project.",
   "author": {
     "name": "Microsoft Corporation",
-    "url": "https://github.com/Azure/generator-terra-module"
+    "url": "https://github.com/Azure/generator-az-terra-module"
   },
   "files": [
     "generators"
@@ -14,11 +14,13 @@
     "scaffold",
     "terraform",
     "tf",
-    "module"
+    "module",
+    "azure",
+    "az"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Azure/generator-terra-module"
+    "url": "https://github.com/Azure/generator-az-terra-module"
   },
   "license": "MIT",
   "dependencies": {
@@ -28,6 +30,6 @@
     "yeoman-generator": "^2.0.0"
   },
   "bugs": {
-    "url": "https://github.com/Azure/generator-terra-module/issues"
+    "url": "https://github.com/Azure/generator-az-terra-module/issues"
   }
 }
