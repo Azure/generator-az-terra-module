@@ -18,19 +18,25 @@ $ yo az-terra-module
 ```
 *Note that this template will generate files in the current directory, so be sure always to run it against a new directory*
 
-### Setting environment (Ruby)
+## Prepare for Native Run
+If you're a big fan of everything in native, please run below simple script to set up environment:
 ```
-$ sudo ./tool/env_setup.sh
+$ sudo ./env_setup.sh
 ```
 
-### Building module
-Once the project is scaffolded, at the root folder run:
+## Prepare for Docker Run
+If you're a big fan of Docker container, please follow below steps to quickly set up docker container:
+```sh
+$ docker build -t terra-mod-example .
+$ docker run -it terra-mod-example /bin/sh
+```
+
+## Build module
 ```
 $ bundle install
 $ rake build
 ```
-### Running module
-At the root folder run:
+## Run module
 ```
 $ terraform init
 $ terraform plan
