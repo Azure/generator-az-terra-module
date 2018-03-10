@@ -13,11 +13,19 @@ module.exports = class extends Generator {
       required: false,
       desc: 'Terraform module project name'
     });
+
+    this.option('docker', {
+      type: String,
+      required: false,
+      default: false,
+      desc: 'Include the Dockerfile'
+    });
   }
 
   initializing() {
     this.props = {
-      name: this.options.name || this.appname
+      name: this.options.name || this.appname,
+      docker: ((this.options.docker.toLowerCase() === 'true') || (this.options.docker.toLowerCase() === 'yes')).toString() 
     };
 
     this.composeWith(require.resolve('../build'));
@@ -38,7 +46,18 @@ module.exports = class extends Generator {
       this.props.name = answer.name || this.props.name;
     });
   }
-  
+
+  _askForDockerFile() {
+    return this.prompt({
+      type    : 'confirm',
+      name    : 'docker',
+      default : false,
+      message : 'Would you like to include the Docker image file?'
+    }).then((answer) => {
+      this.props.docker = answer.docker || this.props.docker;
+    });
+  }
+
   prompting() {
     return this._askForProjectName();
   }
@@ -47,6 +66,11 @@ module.exports = class extends Generator {
   }
 
   default() {
+    return this._askForDockerFile();
+  }
+
+  storage() {
+    this.config.set('templateContext', this.props.docker);
   }
 
   writing() {
@@ -59,6 +83,8 @@ module.exports = class extends Generator {
   }
 
   end() {
+    this.log('Porject Name        : ', this.props.name);
+    this.log('Include Docker Image: ', this.props.docker);
     this.log('Thanks for using module generator for terraform.');
   }
 };

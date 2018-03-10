@@ -67,6 +67,7 @@ curl -Os https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
   gpg --verify terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
   shasum -a 256 -c terraform_${TERRAFORM_VERSION}_SHA256SUMS 2>&1 | grep "${TERRAFORM_VERSION}_${TERRAFORM_OS_ARCH}.zip:\sOK" && \
   unzip -o terraform_${TERRAFORM_VERSION}_${TERRAFORM_OS_ARCH}.zip -d /usr/local/bin
+
 # Cleanup downloaded files
 rm terraform_${TERRAFORM_VERSION}_${TERRAFORM_OS_ARCH}.zip
 rm terraform_${TERRAFORM_VERSION}_SHA256SUMS
