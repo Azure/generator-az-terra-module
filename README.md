@@ -5,7 +5,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 # Azure Terraform Module Generator
 `generator-az-terra-module` creates base template to start a new terraform module.
 
-![Alt Text](/doc/scaffolding.640x434.gif)
+![Terraform module template walkthrough](/doc/scaffolding.640x434.gif)
 
 ## Prerequisites
 1. Install latest [Node LTS](https://nodejs.org).
@@ -16,20 +16,23 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 ```
 $ yo az-terra-module
 ```
-*Note that this template will generate files in the current directory, so be sure always to run it against a new directory*
+***NOTE:** This template will generate files in the **current directory**, so be sure to always run it against a new directory.*
 
 ## Prepare for Native Run
-If you're a big fan of everything in native, please run below simple script to set up environment:
-```
+If you're a big fan of everything in native, please run the below script to set up the environment:
+
+```bash
 $ sudo ./env_setup.sh
 ```
 
 ## Prepare for Docker Run
-If you're a big fan of Docker container, please follow below steps to quickly set up docker container:
-```sh
+If you're a big fan of using Docker containers, please follow the instructions below to quickly set up a Docker container. Not a big fan of Docker containers, that's OK too, you can choose to exclude the Dockerfile from your project template. 
+
+```bash
 $ docker build -t terra-mod-example .
 $ docker run -it terra-mod-example /bin/sh
 ```
+
 
 ## Build module
 ```
