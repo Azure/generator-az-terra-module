@@ -83,8 +83,6 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.log('Porject Name        : ', this.props.name);
-    this.log('Include Docker Image: ', this.props.docker);
     this.log('Thanks for using module generator for terraform.');
   }
 };
