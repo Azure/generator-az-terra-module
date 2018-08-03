@@ -19,5 +19,3 @@ indent_size = 2
 # Tab indentation (no size specified)
 [*]
 indent_style = space
-
-

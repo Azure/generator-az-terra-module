@@ -31,6 +31,7 @@ module.exports = class extends Generator {
     this.composeWith(require.resolve('../build'));
     this.composeWith(require.resolve('../module'));
     this.composeWith(require.resolve('../shared'));
+    this.composeWith(require.resolve('../test'));
   }
 
   _askForProjectName() {

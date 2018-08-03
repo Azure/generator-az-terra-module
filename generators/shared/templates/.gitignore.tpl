@@ -8,9 +8,14 @@
 *.tfstate
 *.tfstate.*
 
+# Go vendor directory
+vendor/
+
+# Module directory
+.test-data/
+
 # Local .terraform directory
 **/.terraform/*
-
 
 # IDE config files
 **/.idea/*

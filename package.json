@@ -1,10 +1,10 @@
 {
-  "name": "generator-az-terra-module",
-  "version": "0.1.4",
-  "description": "Create an Azure terraform module project.",
+  "name": "generator-az-terratest-module",
+  "version": "0.1.0",
+  "description": "Create an Azure terraform module project along with terratest.",
   "author": {
-    "name": "Microsoft Corporation",
-    "url": "https://github.com/Azure/generator-az-terra-module"
+    "name": "foreverXZC",
+    "url": "https://github.com/foreverXZC/generator-az-terra-module"
   },
   "files": [
     "generators"
@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Azure/generator-az-terra-module"
+    "url": "https://github.com/foreverXZC/generator-az-terra-module"
   },
   "license": "MIT",
   "dependencies": {
@@ -30,6 +30,6 @@
     "yeoman-generator": "^2.0.0"
   },
   "bugs": {
-    "url": "https://github.com/Azure/generator-az-terra-module/issues"
+    "url": "https://github.com/foreverXZC/generator-az-terra-module/issues"
   }
 }
