@@ -8,46 +8,47 @@ import (
 	"github.com/gruntwork-io/terratest/modules/test-structure"
 )
 
-func TestTerraformSshExample(t *testing.T) {
+func TestTerraformTemplate(t *testing.T) {
 	t.Parallel()
 
-	exampleFolder := "./fixture"
-
-	// At the end of the test, run `terraform destroy` to clean up any resources that were created
-	defer test_structure.RunTestStage(t, "teardown", func() {
-		terraformOptions := test_structure.LoadTerraformOptions(t, exampleFolder)
-		terraform.Destroy(t, terraformOptions)
-	})
+	fixtureFolder := "./fixture"
 
 	// Deploy the example
 	test_structure.RunTestStage(t, "setup", func() {
-		terraformOptions := configureTerraformOptions(t, exampleFolder)
+		terraformOptions := configureTerraformOptions(t, fixtureFolder)
 
 		// Save the options so later test stages can use them
-		test_structure.SaveTerraformOptions(t, exampleFolder, terraformOptions)
+		test_structure.SaveTerraformOptions(t, fixtureFolder, terraformOptions)
 
-		// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
+		// This will init and apply the resources and fail the test if there are any errors
 		terraform.InitAndApply(t, terraformOptions)
 	})
 
-	// Check whether the output has a length of 22
+	// Check whether the length of output meets the requirement
 	test_structure.RunTestStage(t, "validate", func() {
-		terraformOptions := test_structure.LoadTerraformOptions(t, exampleFolder)
+		terraformOptions := test_structure.LoadTerraformOptions(t, fixtureFolder)
 
 		stringList := terraform.Output(t, terraformOptions, "permutation_string_list_test")
+		const LENGTH int = 22
 		fmt.Println(stringList)
-		if len(stringList) != 22 {
+		if len(stringList) != LENGTH {
 			t.Fatal("Wrong output")
 		}
 	})
 
+	// At the end of the test, clean up any resources that were created
+	test_structure.RunTestStage(t, "teardown", func() {
+		terraformOptions := test_structure.LoadTerraformOptions(t, fixtureFolder)
+		terraform.Destroy(t, terraformOptions)
+	})
+
 }
 
-func configureTerraformOptions(t *testing.T, exampleFolder string) *terraform.Options {
+func configureTerraformOptions(t *testing.T, fixtureFolder string) *terraform.Options {
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: exampleFolder,
+		TerraformDir: fixtureFolder,
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{},
