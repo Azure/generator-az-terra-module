@@ -1,10 +1,10 @@
 {
   "name": "generator-az-terratest-module",
-  "version": "0.2.0",
+  "version": "0.1.2",
   "description": "Create an Azure terraform module project along with terratest.",
   "author": {
-    "name": "Microsoft Corporation",
-    "url": "https://github.com/Azure/generator-az-terra-module"
+    "name": "foreverXZC",
+    "url": "https://github.com/foreverXZC/generator-az-terra-module"
   },
   "files": [
     "generators"
