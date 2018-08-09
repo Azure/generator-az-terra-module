@@ -6,6 +6,8 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 `generator-az-terra-module` creates base template to start a new terraform module along with terratest for automatically testing the module.
 
+![Terraform module template walkthrough](/doc/scaffolding.934x477.gif)
+
 ## Prerequisites
 
 1. Install latest [Node LTS](https://nodejs.org).
