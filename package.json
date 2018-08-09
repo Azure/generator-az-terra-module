@@ -1,7 +1,7 @@
 {
   "name": "generator-az-terra-module",
-  "version": "0.1.4",
-  "description": "Create an Azure terraform module project.",
+  "version": "0.2.0",
+  "description": "Create an Azure terraform module project along with terratest.",
   "author": {
     "name": "Microsoft Corporation",
     "url": "https://github.com/Azure/generator-az-terra-module"

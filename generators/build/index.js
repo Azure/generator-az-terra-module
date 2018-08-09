@@ -36,5 +36,15 @@ module.exports = class extends Generator {
       this.templatePath('env_setup.sh'),
       this.destinationPath('env_setup.sh')
     );
+
+    this.fs.copy(
+      this.templatePath('Gopkg.lock'),
+      this.destinationPath('Gopkg.lock')
+    );
+
+    this.fs.copy(
+      this.templatePath('Gopkg.toml'),
+      this.destinationPath('Gopkg.toml')
+    );
   }
 };
