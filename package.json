@@ -1,6 +1,6 @@
 {
   "name": "generator-az-terra-module",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Create an Azure terraform module project along with terratest.",
   "author": {
     "name": "Microsoft Corporation",
@@ -14,6 +14,7 @@
     "scaffold",
     "terraform",
     "tf",
+    "terratest",
     "module",
     "azure",
     "az"
