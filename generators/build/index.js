@@ -10,11 +10,6 @@ module.exports = class extends Generator {
   writing() {
     var copyDocker = this.config.get('templateContext', 'docker');
 
-    this.fs.copy(
-      this.templatePath('.travis.yml'),
-      this.destinationPath('.travis.yml')
-    );
-
     if(copyDocker == true) {
       this.fs.copy(
         this.templatePath('Dockerfile'),
