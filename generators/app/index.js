@@ -28,6 +28,9 @@ module.exports = class extends Generator {
       docker: ((this.options.docker.toLowerCase() === 'true') || (this.options.docker.toLowerCase() === 'yes')).toString() 
     };
 
+    this.composeWith(require.resolve('generator-license'), {
+      defaultLicense: 'MIT'
+    });
     this.composeWith(require.resolve('../build'));
     this.composeWith(require.resolve('../module'));
     this.composeWith(require.resolve('../example'));
