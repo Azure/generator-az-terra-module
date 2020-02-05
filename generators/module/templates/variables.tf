@@ -1,5 +1,5 @@
 variable "raw_string_list" {
-  type  = list(string)
+  type        = list(string)
   description = ""
   default     = ["us-west-1a", "us-west-1b", "us-west-1c"]
 }
