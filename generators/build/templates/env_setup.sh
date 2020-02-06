@@ -14,7 +14,7 @@ else
 fi
 
 # Version, OS and Arch for Terraform.
-TERRAFORM_VERSION="0.11.7"
+TERRAFORM_VERSION="0.12.10"
 # Version for Ruby SDK.
 RUBY_VERSION="2.3.3"
 RUBY_INSTALLED_VERSION_REGEX="^(ruby) ([0-9].[0-9].[0-9]p[0-9]+)"

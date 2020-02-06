@@ -13,6 +13,12 @@ func TestTerraformTemplate(t *testing.T) {
 
 	fixtureFolder := "./fixture"
 
+	// At the end of the test, clean up any resources that were created
+	defer test_structure.RunTestStage(t, "teardown", func() {
+		terraformOptions := test_structure.LoadTerraformOptions(t, fixtureFolder)
+		terraform.Destroy(t, terraformOptions)
+	})
+
 	// Deploy the example
 	test_structure.RunTestStage(t, "setup", func() {
 		terraformOptions := configureTerraformOptions(t, fixtureFolder)
@@ -29,17 +35,10 @@ func TestTerraformTemplate(t *testing.T) {
 		terraformOptions := test_structure.LoadTerraformOptions(t, fixtureFolder)
 
 		stringList := terraform.Output(t, terraformOptions, "permutation_string_list_test")
-		const LENGTH int = 22
 		fmt.Println(stringList)
-		if len(stringList) != LENGTH {
+		if len(stringList) <= 0 {
 			t.Fatal("Wrong output")
 		}
-	})
-
-	// At the end of the test, clean up any resources that were created
-	test_structure.RunTestStage(t, "teardown", func() {
-		terraformOptions := test_structure.LoadTerraformOptions(t, fixtureFolder)
-		terraform.Destroy(t, terraformOptions)
 	})
 
 }

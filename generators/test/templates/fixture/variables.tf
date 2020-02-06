@@ -1,4 +1,5 @@
 variable "raw_string_list_test" {
+  type        = list(string)
   description = ""
   default     = []
 }
